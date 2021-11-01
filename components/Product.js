@@ -16,7 +16,7 @@ export function Product({name, price, image, onPress}) {
 }
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     borderRadius: 16,
     shadowOpacity: 0.2,
     shadowRadius: 4,
@@ -38,10 +38,12 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   name: {
+    color: 'white',    
     fontSize: 22,
     fontWeight: 'bold',
   },
   price: {
+    color: 'white',
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 8,
