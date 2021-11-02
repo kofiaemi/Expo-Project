@@ -8,6 +8,7 @@ import { ProductDetails } from './screens/ProductDetails.js';
 import { Cart } from './screens/Cart.js';
 import { CartIcon } from './components/CartIcon.js';
 import { CartProvider } from './CartContext.js';
+import { Checkout } from './screens/Checkout.js';
 const Stack = createNativeStackNavigator();
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
         <Stack.Navigator>
         <Stack.Screen name='Login' component={Login} 
           options={({ navigation }) => ({
-            title: 'Login',
+            title: 'login',
+            Login: () => <loginBtn navigation={navigation}/>
           })}/>
-          <Stack.Screen name='Products' component={ProductsList} 
+          <Stack.Screen name='ProductsList' component={ProductsList} 
           options={({ navigation }) => ({
             title: 'Products',
             headerTitleStyle: styles.headerTitle,
@@ -36,6 +38,11 @@ function App() {
             headerTitleStyle: styles.headerTitle,
             headerRight: () => <CartIcon navigation={navigation}/>,
           })} />
+          <Stack.Screen name='Checkout' component={Checkout} 
+          options={({ navigation }) => ({
+            title: 'checking out',
+            Checkout: () => <CheckoutBtn navigation={navigation}/>
+          })}/>
         </Stack.Navigator>
       </NavigationContainer>
     </CartProvider>

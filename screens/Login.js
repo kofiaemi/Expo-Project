@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, TextInput, Button, TouchableOpacity } fr
 import { ProductsList } from '../screens/ProductsList.js';
 import { getProducts } from '../services/ProductsService.js';
 import { StatusBar } from "expo-status-bar";
+import { Cart } from './Cart.js';
 export function Login ({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,15 +37,17 @@ export function Login ({navigation}) {
       </TouchableOpacity>
 
       
-      <View style={styles.loginBtn}>
+      <TouchableOpacity style={styles.loginBtn}>
       <Text style={styles.text} 
         onPress={() => {
-          navigation.navigate('ProductsList', {
-              setEmail: setPassword,
-          });
+          navigation.navigate('ProductsList');
         }}
       >Login </Text>
-    </View>
+    </TouchableOpacity>
+
+    <TouchableOpacity>
+        <Text style={styles.forgot_button}>Sign up</Text>
+      </TouchableOpacity>
       
     </View>
   );
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
   },
 
   loginBtn: {
-    width: "80%",
+    width: "30%",
     borderRadius: 25,
     height: 50,
     alignItems: "center",
