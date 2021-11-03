@@ -13,7 +13,7 @@ const {items, getItemsCount, getTotalPrice} = useContext(CartContext);
     return (
        <View style={styles.cartLineTotal}>
           <Text style={[styles.lineLeft, styles.lineTotal]}>Total</Text>
-          <Text style={styles.lineRight}>$ {total}</Text>
+          <Text style={styles.lineRight}>GH₵ {total}</Text>
        </View>
     );
   }
@@ -21,7 +21,7 @@ function renderItem({item}) {
     return (
        <View style={styles.cartLine}>
           <Text style={styles.lineLeft}>{item.product.name} x {item.qty}</Text>
-          <Text style={styles.lineRight}>$ {item.totalPrice}</Text>
+          <Text style={styles.lineRight}>GH₵ {item.totalPrice}</Text>
        </View>
     );
   }
@@ -40,8 +40,7 @@ function renderItem({item}) {
 
     
 }
-export function CheckoutBtn ({navigation}) {
-  return (
+
     <View>
   <TouchableOpacity style={styles.CheckoutBtn}>
   <Text style={styles.text} 
@@ -51,8 +50,7 @@ export function CheckoutBtn ({navigation}) {
   >Procced to checkout </Text>
 </TouchableOpacity>
 </View>
-  );
-}
+  
 const styles = StyleSheet.create({
   cartLine: { 
     flexDirection: 'row',

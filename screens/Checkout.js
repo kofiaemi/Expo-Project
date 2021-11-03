@@ -39,15 +39,7 @@ function renderItem({item}) {
     />
     
   );
-  <View>
-  <TouchableOpacity style={styles.CheckoutBtn}>
-  <Text style={styles.text} 
-    onPress={() => {
-      navigation.navigate('Checkout');
-    }}
-  >Procced to checkout </Text>
-</TouchableOpacity>
-</View>
+
 }
 
     
