@@ -9,7 +9,7 @@ const PRODUCTS = [
     {
         id: 101,
         name: 'Red Jacket',
-        price: 600,
+        price: 400,
         image: require('../assets/products/RedJacket.jpg'),
         description: 'A red jacket from brommon bespoke with quality fabric.'
     },
@@ -23,58 +23,58 @@ const PRODUCTS = [
     {
         id: 103,
         name: 'Wine Suit',
-        price: 300,
+        price: 500,
         image: require('../assets/products/winesuit.jpg'),
         description: 'A wine two piece authentic suit from brommon bespoke.'
     },
     {
         id: 104,
         name: 'Blue Tuxedo',
-        price: 300,
+        price: 1200,
         image: require('../assets/products/bluetuxedo.jpg'),
-        description: 'A wine two piece authentic suit from brommon bespoke.'
+        description: 'A blue authentic tuxedo from brommon bespoke.'
     },
     {
         id: 105,
         name: 'Blue & Red Checked Jacket With Red Trousers',
-        price: 300,
+        price: 700,
         image: require('../assets/products/checkedjacketwithredpants.jpg'),
-        description: 'A wine two piece authentic suit from brommon bespoke.'
+        description: 'A blue and red checked jacket with red trousers from brommon bespoke.'
     },
     {
         id: 106,
         name: 'Light-Blue Suit',
-        price: 300,
+        price: 600,
         image: require('../assets/products/lightbluesuit.jpg'),
-        description: 'A wine two piece authentic suit from brommon bespoke.'
+        description: 'A light-blue authentic suit from brommon bespoke.'
     },
     {
         id: 107,
         name: 'Purple Suit',
-        price: 300,
+        price: 700,
         image: require('../assets/products/purplesuit.jpg'),
-        description: 'A wine two piece authentic suit from brommon bespoke.'
+        description: 'A purple two piece authentic suit from brommon bespoke.'
     },
     {
         id: 108,
         name: 'White Jacket',
-        price: 300,
+        price: 1500,
         image: require('../assets/products/whitesuit.jpg'),
-        description: 'A wine two piece authentic suit from brommon bespoke.'
+        description: 'A white two authentic suit from brommon bespoke.'
     },
     {
         id: 109,
         name: 'Grey Overcoat',
-        price: 300,
+        price: 950,
         image: require('../assets/products/greyovercoat.jpg'),
-        description: 'A wine two piece authentic suit from brommon bespoke.'
+        description: 'A grey authentic overcoat from brommon bespoke.'
     },
     {
         id: 110,
         name: 'Blue & Green Checked Woolen Overcoat',
         price: 300,
         image: require('../assets/products/Checkedwoolenovercoat.jpg'),
-        description: 'A wine two piece authentic suit from brommon bespoke.'
+        description: 'A blue and green checked authentic woolen overcoat from brommon bespoke.'
     },
 ];
 export function getProducts() {

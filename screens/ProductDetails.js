@@ -15,6 +15,7 @@ export function ProductDetails({route}) {
   const [product, setProduct] = useState({});
 
   const { addItemToCart } = useContext(CartContext);
+  const { removeItemFromCart } = useContext(CartContext);
 
   useEffect(() => {
     setProduct(getProduct(productId));
@@ -22,6 +23,10 @@ export function ProductDetails({route}) {
 
   function onAddToCart() {
     addItemToCart(product.id);
+  }
+
+  function onRemoveFromCart() {
+    removeItemFromCart(product.id);
   }
 
   return (
@@ -33,12 +38,16 @@ export function ProductDetails({route}) {
         />
         <View style={styles.infoContainer}>
           <Text style={styles.name}>{product.name}</Text>
-          <Text style={styles.price}>$ {product.price}</Text>
+          <Text style={styles.price}>GH₵ {product.price}</Text>
           <Text style={styles.description}>{product.description}</Text>
             <Button
             onPress={onAddToCart}
             title="Add to cart"
-            / >
+            />
+            <Button
+            onPress={onRemoveFromCart}
+            title="Remove from cart"
+            />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -79,5 +88,5 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: '#787878',
     marginBottom: 16,
-  },
+  }
 });

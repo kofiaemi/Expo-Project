@@ -9,7 +9,7 @@ export function Product({name, price, image, onPress}) {
       />
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{name}</Text>
-        <Text style={styles.price}>$ {price}</Text>
+        <Text style={styles.price}>GH₵ {price}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   thumb: {
-    height: 260,
+    height: 460,
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
     width: '100%',

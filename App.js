@@ -17,7 +17,7 @@ function App() {
         <Stack.Navigator>
         <Stack.Screen name='Login' component={Login} 
           options={({ navigation }) => ({
-            title: 'login',
+            title: 'Login',
             Login: () => <loginBtn navigation={navigation}/>
           })}/>
           <Stack.Screen name='ProductsList' component={ProductsList} 
