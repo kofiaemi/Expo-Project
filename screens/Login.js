@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { View, Text, StyleSheet, Image, TextInput, Button, TouchableOpacity } from 'react-native';
-import { ProductsList } from '../screens/ProductsList.js';
-import { getProducts } from '../services/ProductsService.js';
 import { StatusBar } from "expo-status-bar";
-import { Cart } from './Cart.js';
 export function Login ({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -66,6 +63,7 @@ const styles = StyleSheet.create({
   },
 
   inputView: {
+    borderColor: "black",
     backgroundColor: "black",
     borderRadius: 30,
     width: "70%",
@@ -76,6 +74,7 @@ const styles = StyleSheet.create({
   },
 
   TextInput: {
+    color: "white",
     height: 50,
     flex: 1,
     padding: 10,
@@ -97,6 +96,7 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   text: {
+    textAlign: "left",
     color: 'white',
     fontWeight: 'bold',
   },

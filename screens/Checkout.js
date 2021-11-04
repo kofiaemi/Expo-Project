@@ -1,94 +1,127 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { View, Text, Button, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
-import { CartContext } from '../CartContext';
-import { Cart } from '../screens/Cart';
+import React, {useEffect, useState} from 'react';
+import { View, Text, StyleSheet, Image, TextInput, Button, TouchableOpacity } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Cart } from './Cart';
 export function Checkout ({navigation}) {
-const {items, getItemsCount, getTotalPrice} = useContext(CartContext);
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [address, setAddress] = useState("")
 
-
-
-  function Totals() {
-    let [total, setTotal] = useState(0);
-    useEffect(() => {
-      setTotal(getTotalPrice());
-    });
-    return (
-       <View style={styles.cartLineTotal}>
-          <Text style={[styles.lineLeft, styles.lineTotal]}>Total</Text>
-          <Text style={styles.lineRight}>$ {total}</Text>
-       </View>
-    );
-  }
-function renderItem({item}) {
-    return (
-       <View style={styles.cartLine}>
-          <Text style={styles.lineLeft}>{item.product.name} x {item.qty}</Text>
-          <Text style={styles.lineRight}>$ {item.totalPrice}</Text>
-       </View>
-    );
-  }
 
   return (
-    <FlatList
-      style={styles.itemsList}
-      contentContainerStyle={styles.itemsListContainer}
-      data={items}
-      renderItem={renderItem}
-      keyExtractor={(item) => item.product.id.toString()}
-      ListFooterComponent={Totals}
-    />
-    
-  );
+    <View style={styles.container}>
 
+      <StatusBar style="auto" />
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Full Name"
+          placeholderTextColor="#eeeeee"
+          onChangeText={(name) => setName(name)}
+        />
+      </View>
+
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Pone Number"
+          placeholderTextColor="#eeeeee"
+          secureTextEntry={true}
+          onChangeText={(number) => setNumber(number)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Address Line 1"
+          placeholderTextColor="#eeeeee"
+          secureTextEntry={true}
+          onChangeText={(address) => setAddress(address)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Address Line 2"
+          placeholderTextColor="#eeeeee"
+          secureTextEntry={true}
+          onChangeText={(address) => setAddress(address)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Address Line 3"
+          placeholderTextColor="#eeeeee"
+          secureTextEntry={true}
+          onChangeText={(address) => setAddress(address)}
+        />
+      </View>
+
+      
+      <TouchableOpacity style={styles.checkBtn}>
+      <Text style={styles.text} 
+        onPress={() => {
+          navigation.navigate('Confirmation');
+        }}
+      >Checkout </Text>
+    </TouchableOpacity>
+
+    
+      
+    </View>
+  );
 }
 
-    
-
-
 const styles = StyleSheet.create({
-  cartLine: { 
-    flexDirection: 'row',
-  },
-  cartLineTotal: { 
-    flexDirection: 'row',
-    borderTopColor: '#dddddd',
-    borderTopWidth: 1
-  },
-  lineTotal: {
-    fontWeight: 'bold',    
-  },
-  lineLeft: {
-    fontSize: 20, 
-    lineHeight: 40, 
-    color:'#333333' 
-  },
-  lineRight: { 
+  container: {
     flex: 1,
-    fontSize: 20, 
-    fontWeight: 'bold',
-    lineHeight: 40, 
-    color:'#333333', 
-    textAlign:'right',
+    backgroundColor: "#eeeeee",
+    alignItems: "center",
+    justifyContent: "center",
   },
-  itemsList: {
-    backgroundColor: '#eeeeee',
+
+  image: {
+    marginBottom: 40,
   },
-  itemsListContainer: {
-    backgroundColor: '#eeeeee',
-    paddingVertical: 8,
-    marginHorizontal: 8,
+
+  inputView: {
+    borderColor: "black",
+    backgroundColor: "black",
+    borderRadius: 30,
+    width: "90%",
+    height: 45,
+    marginBottom: 30,
+
+    alignItems: "center",
   },
-  CheckoutBtn: {
-    width: "80%",
+
+  TextInput: {
+    color: "white",
+    height: 50,
+    flex: 1,
+    padding: 10,
+    marginLeft: 20,
+  },
+
+  forgot_button: {
+    height: 30,
+    marginBottom: 30,
+  },
+
+  checkBtn: {
+    width: "30%",
     borderRadius: 25,
     height: 50,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 40,
+    marginTop: 60,
     backgroundColor: "black",
   },
   text: {
+    textAlign: "left",
     color: 'white',
     fontWeight: 'bold',
-  }
+  },
 });
+

@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   image: {
-    height: 300,
+    height: 460,
     width: '100%'
   },
   infoContainer: {

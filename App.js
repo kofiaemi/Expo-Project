@@ -9,6 +9,7 @@ import { Cart } from './screens/Cart.js';
 import { CartIcon } from './components/CartIcon.js';
 import { CartProvider } from './CartContext.js';
 import { Checkout } from './screens/Checkout.js';
+import { Confirmation } from './screens/Confirmation'
 const Stack = createNativeStackNavigator();
 function App() {
   return (
@@ -40,9 +41,10 @@ function App() {
           })} />
           <Stack.Screen name='Checkout' component={Checkout} 
           options={({ navigation }) => ({
-            title: 'checking out',
+            title: 'Checkout',
             Checkout: () => <CheckoutBtn navigation={navigation}/>
           })}/>
+          <Stack.Screen name='Confirmation' component={Confirmation}/>
         </Stack.Navigator>
       </NavigationContainer>
     </CartProvider>

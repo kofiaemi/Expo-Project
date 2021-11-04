@@ -27,6 +27,7 @@ function renderItem({item}) {
   }
 
   return (
+    <View>
     <FlatList
       style={styles.itemsList}
       contentContainerStyle={styles.itemsListContainer}
@@ -36,20 +37,20 @@ function renderItem({item}) {
       ListFooterComponent={Totals}
     />
     
+    <TouchableOpacity style={styles.CheckoutBtn}>
+  
+      <Text style={styles.text} 
+        onPress={() => {
+          navigation.navigate('Checkout');
+        }}
+      >Proceed to Checkout </Text>
+    </TouchableOpacity>
+    </View>
+    
   );
 
     
 }
-
-    <View>
-  <TouchableOpacity style={styles.CheckoutBtn}>
-  <Text style={styles.text} 
-    onPress={() => {
-      navigation.navigate('Checkout');
-    }}
-  >Procced to checkout </Text>
-</TouchableOpacity>
-</View>
   
 const styles = StyleSheet.create({
   cartLine: { 
@@ -85,16 +86,17 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   CheckoutBtn: {
-    width: "80%",
+    width: "50%",
     borderRadius: 25,
     height: 50,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 40,
+    marginBottom: 80,
     backgroundColor: "black",
   },
   text: {
     color: 'white',
     fontWeight: 'bold',
+    textAlign: 'center',
   }
 });
