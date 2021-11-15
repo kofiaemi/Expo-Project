@@ -15,10 +15,10 @@ const PRODUCTS = [
     },
     {
         id: 102,
-        name: 'Blue-Black Double Breasted Tuxedo',
+        name: 'Blue-Black Tuxedo',
         price: 600,
         image: require('../assets/products/bluedoublebreastedtux.jpg'),
-        description: 'A quality blue tuxedo from brommon bespoke with quality glossy fabric.'
+        description: 'A quality blue-black double breasted tuxedo from brommon bespoke with quality glossy fabric.'
     },
     {
         id: 103,
@@ -36,7 +36,7 @@ const PRODUCTS = [
     },
     {
         id: 105,
-        name: 'Blue & Red Checked Jacket With Red Trousers',
+        name: 'Checked Jacket Trousers',
         price: 700,
         image: require('../assets/products/checkedjacketwithredpants.jpg'),
         description: 'A blue and red checked jacket with red trousers from brommon bespoke.'
@@ -71,7 +71,7 @@ const PRODUCTS = [
     },
     {
         id: 110,
-        name: 'Blue & Green Checked Woolen Overcoat',
+        name: 'Checked Woolen Overcoat',
         price: 300,
         image: require('../assets/products/Checkedwoolenovercoat.jpg'),
         description: 'A blue and green checked authentic woolen overcoat from brommon bespoke.'

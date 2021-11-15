@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import { View, Text, StyleSheet, Image, TextInput, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
 import { StatusBar } from "expo-status-bar";
-import { Cart } from './Cart';
 export function Checkout ({navigation}) {
   const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
+  const [num, setNumber] = useState("");
   const [address, setAddress] = useState("")
 
 
@@ -12,6 +11,7 @@ export function Checkout ({navigation}) {
     <View style={styles.container}>
 
       <StatusBar style="auto" />
+
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -24,36 +24,32 @@ export function Checkout ({navigation}) {
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Pone Number"
+          placeholder="Phone Number"
           placeholderTextColor="#eeeeee"
-          secureTextEntry={true}
-          onChangeText={(number) => setNumber(number)}
+          onChangeText={(num) => setNumber(num)}
         />
       </View>
-      <View style={styles.inputView}>
+      <View style={styles.addressinputView}>
         <TextInput
           style={styles.TextInput}
           placeholder="Address Line 1"
           placeholderTextColor="#eeeeee"
-          secureTextEntry={true}
           onChangeText={(address) => setAddress(address)}
         />
       </View>
-      <View style={styles.inputView}>
+      <View style={styles.addressinputView}>
         <TextInput
           style={styles.TextInput}
           placeholder="Address Line 2"
           placeholderTextColor="#eeeeee"
-          secureTextEntry={true}
           onChangeText={(address) => setAddress(address)}
         />
       </View>
-      <View style={styles.inputView}>
+      <View style={styles.addressinputView}>
         <TextInput
           style={styles.TextInput}
           placeholder="Address Line 3"
           placeholderTextColor="#eeeeee"
-          secureTextEntry={true}
           onChangeText={(address) => setAddress(address)}
         />
       </View>
@@ -90,8 +86,30 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     borderRadius: 30,
     width: "90%",
-    height: 45,
+    height: 35,
     marginBottom: 30,
+
+    alignItems: "center",
+  },
+
+  numinputView: {
+    borderColor: "black",
+    backgroundColor: "black",
+    borderRadius: 30,
+    width: "90%",
+    height: 35,
+    marginBottom: 30,
+
+    alignItems: "center",
+  },
+
+  addressinputView: {
+    borderColor: "black",
+    backgroundColor: "black",
+    borderRadius: 30,
+    width: "90%",
+    height: 35,
+    marginBottom: 10,
 
     alignItems: "center",
   },
@@ -104,24 +122,18 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
 
-  forgot_button: {
-    height: 30,
-    marginBottom: 30,
-  },
-
   checkBtn: {
     width: "30%",
     borderRadius: 25,
-    height: 50,
+    height: 40,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 60,
+    marginTop: "40%",
+    marginBottom: "1%",
     backgroundColor: "black",
   },
   text: {
     textAlign: "left",
     color: 'white',
-    fontWeight: 'bold',
   },
 });
-

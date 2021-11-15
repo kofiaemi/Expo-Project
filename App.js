@@ -42,9 +42,11 @@ function App() {
           <Stack.Screen name='Checkout' component={Checkout} 
           options={({ navigation }) => ({
             title: 'Checkout',
+            headerTitleStyle: styles.headerTitle,
             Checkout: () => <CheckoutBtn navigation={navigation}/>
           })}/>
-          <Stack.Screen name='Confirmation' component={Confirmation}/>
+          <Stack.Screen name='Confirmation' component={Confirmation}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </CartProvider>
